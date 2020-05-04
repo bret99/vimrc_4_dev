@@ -7,4 +7,5 @@ Hotkeys you get:
 
 Of cource one need to preinstall valgrind, clang-tools. vim-nox and so on you know.
 Also one should cd YouCompleteMe dir and install.py --clangd-completer.
-As a result you get imho the lightest and the fastets IDE.
+And clone Paper color (color scheme) to .vim/color dir (line 29 in .vimrc).
+As a result you get imho the lightest and the fastest IDE.

@@ -1,16 +1,25 @@
 imap <F2> <Esc>:w<CR>
 map <F2> <Esc>:w<CR>
+imap <F8> <Esc>:bel vert ter<CR>
+map <F8> <Esc>:bel vert ter<CR>
+imap <F7> <Esc>:bel ter<CR>
+map <F7> <Esc>:bel ter<CR>
 imap <F10> <Esc>:q<CR>
 map <F10> <Esc>:q<CR>
 
 set wildmenu
 set wcm=<Tab>
+menu Exec.java                :!cd $(pwd) && javac % && java %< && rm *.class <CR>
 menu Exec.c++                 :!g++ --std=c++17 -O % -o %< && ./%< && rm ./%< <CR>
 menu Exec.pthread             :!g++ --std=c++17 -O -pthread % -o %< && ./%< && rm -i ./%< <CR>  
 menu Exec.python3             :!python3 % <CR>
 menu Exec.bash                :!/bin/bash % <CR>
-menu Exec.valgrind            :!g++ --std=c++17 -O % -o %< && valgrind --leak-check=full ./%< && rm -i ./%< <CR>    
+"menu Exec.latex               :!pdflatex -output-directory=/home/desktop/my_pro/latex % && rm ./%<.log ./%<.aux <CR>
+menu Exec.valgrind            :!g++ --std=c++17 -O % -o %< && valgrind --leak-check=full ./%< && rm -i ./%< <CR>  
+" menu Exec.browser             :!firefox % <CR>  
 menu Exec.delCurrentFile      :!rm % <CR>
+" menu Exec.ada                 :!gnatmake -d -D /home/desktop/ada_pro/ % -o %< && ./%< && rm ./%<.ali ./%/o <CR>
+" menu Exec.node                :!node % <CR>  
 map <F9> :emenu Exec.<Tab>
 
 set clipboard=unnamedplus
@@ -45,10 +54,13 @@ Plugin 'w0rp/ale'
 Plugin 'google/vim-maktaba'
 Plugin 'google/vim-codefmt'
 Plugin 'google/vim-glaive'
+Plugin 'mattn/emmet-vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'vim-airline/vim-airline'
 Plugin 'Raimondi/delimitMate'
 Plugin 'Yggdroot/indentLine'
+Plugin 'lervag/vimtex'
+Plugin 'hashivim/vim-terraform'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -92,18 +104,37 @@ let g:ycm_semantic_triggers =  {
  " autocmd FileType python AutoFormatBuffer yapf
 " augroup END
 
+" hotkey for emmet 
+let g:user_emmet_leader_key='<F4>'
+
 " open NERDTree automatically when vim starts up on opening a directory
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
 
 map <silent> <F5> : NERDTreeToggle<CR>
 
+
 " setup for indent line
 let g:indentLine_char = '│'
 set tags=./tags,tags;$HOME
 "source ~/cscope_maps.vim
 
+"Отключаем автоматическое открытие окна Quickfix
+ let g:vimtex_quickfix_mode = 1
+
+" autocomplete latex with ycm
+  if !exists('g:ycm_semantic_triggers')
+    let g:ycm_semantic_triggers = {}
+  endif
+  au VimEnter * let g:ycm_semantic_triggers.tex=g:vimtex#re#youcompleteme
+
+
 " Let clangd fully control code completion
 let g:ycm_clangd_uses_ycmd_caching = 0
 " Use installed clangd, not YCM-bundled clangd which doesn't get updates.
 let g:ycm_clangd_binary_path = exepath("clangd")
+
+" Terraform settings
+let g:terraform_align=1
+let g:terraform_fold_sections=0
+let g:terraform_fmt_on_save=1

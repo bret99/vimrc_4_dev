@@ -61,6 +61,7 @@ Plugin 'Raimondi/delimitMate'
 Plugin 'Yggdroot/indentLine'
 Plugin 'lervag/vimtex'
 Plugin 'hashivim/vim-terraform'
+Plugin 'chr4/nginx.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required

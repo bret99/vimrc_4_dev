@@ -25,14 +25,12 @@ menu Fmt.cpp_fmt              :!clang-format -i %
 set clipboard=unnamedplus
 
 syntax enable
-filetype on
 set nu
 set ruler
 set mouse=c
 set listchars=tab:\|\
 set list
 set nocompatible              
-filetype off                  
 
 set background=dark
 colorscheme PaperColor
@@ -56,6 +54,7 @@ Plugin 'hashivim/vim-terraform'
 Plugin 'chr4/nginx.vim'
 call vundle#end()            
 
+filetype off                  
 filetype plugin indent on    
 
 set mouse=c

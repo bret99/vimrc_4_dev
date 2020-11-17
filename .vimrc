@@ -16,11 +16,11 @@ menu Exec.c++                 :!g++ --std=c++17 -O % -o %< && ./%< && rm ./%< <C
 menu Exec.pthread             :!g++ --std=c++17 -O -pthread % -o %< && ./%< && rm -i ./%< <CR>  
 menu Exec.python3             :!python3 % <CR>
 menu Exec.bash                :!/bin/bash % <CR>
-"menu Exec.latex               :!pdflatex -output-directory=/path_to_your_file % && rm ./%<.log ./%<.aux <CR>
 menu Exec.valgrind            :!g++ --std=c++17 -O % -o %< && valgrind --leak-check=full ./%< && rm -i ./%< <CR>  
 menu Exec.delCurrentFile      :!rm % <CR>
 menu Fmt.python_fmt           :!yapf3 -i % <CR>
 menu Fmt.cpp_fmt              :!clang-format -i %
+menu Fmt.dart_fmt             :!dart format % <CR>
 
 set clipboard=unnamedplus
 
@@ -49,12 +49,11 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'vim-airline/vim-airline'
 Plugin 'Raimondi/delimitMate'
 Plugin 'Yggdroot/indentLine'
-Plugin 'lervag/vimtex'
 Plugin 'hashivim/vim-terraform'
 Plugin 'chr4/nginx.vim'
 call vundle#end()            
 
-filetype off                  
+filetype off    
 filetype plugin indent on    
 
 set mouse=c
@@ -117,3 +116,8 @@ let g:ycm_clangd_binary_path = exepath("clangd")
 let g:terraform_align=1
 let g:terraform_fold_sections=0
 let g:terraform_fmt_on_save=1
+
+" dart settings
+let dart_html_in_string=v:true 
+let g:dart_style_guide = 2
+let g:lsc_auto_map = v:true

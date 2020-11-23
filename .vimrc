@@ -20,7 +20,6 @@ menu Exec.valgrind            :!g++ --std=c++17 -O % -o %< && valgrind --leak-ch
 menu Exec.delCurrentFile      :!rm % <CR>
 menu Fmt.python_fmt           :!yapf3 -i % <CR>
 menu Fmt.cpp_fmt              :!clang-format -i %
-menu Fmt.dart_fmt             :!dart format % <CR>
 
 set clipboard=unnamedplus
 
@@ -98,15 +97,6 @@ map <silent> <F5> : NERDTreeToggle<CR>
 let g:indentLine_char = '│'
 set tags=./tags,tags;$HOME
 
-" turn off Quickfix automatic openning window
- let g:vimtex_quickfix_mode = 1
-
-" autocomplete latex with ycm
-  if !exists('g:ycm_semantic_triggers')
-    let g:ycm_semantic_triggers = {}
-  endif
-  au VimEnter * let g:ycm_semantic_triggers.tex=g:vimtex#re#youcompleteme
-
 " let clangd fully control code completion
 let g:ycm_clangd_uses_ycmd_caching = 0
 " Use installed clangd, not YCM-bundled clangd which doesn't get updates.
@@ -117,7 +107,3 @@ let g:terraform_align=1
 let g:terraform_fold_sections=0
 let g:terraform_fmt_on_save=1
 
-" dart settings
-let dart_html_in_string=v:true 
-let g:dart_style_guide = 2
-let g:lsc_auto_map = v:true

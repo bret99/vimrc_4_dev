@@ -10,5 +10,5 @@ Hotkeys you get:
 
 Of course one need to preinstall valgrind, clang-tools, vim-nox, terraform, yapf and so on you know.
 Also one should cd YouCompleteMe dir and "install.py --clangd-completer" and "install.py --java-compliter"; pip3 install yamllint.
-And clone Paper color (color scheme) to .vim/color dir (line 29 in .vimrc).
+And clone Paper color (color scheme) to .vim/colors dir (line 29 in .vimrc).
 As a result you get imho the lightest and the fastest universal IDE for coding in c++, python3, bash, java. One may add functionality for node or smth like this.

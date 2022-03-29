@@ -82,7 +82,7 @@ autocmd FileType c,cpp setlocal expandtab shiftwidth=2 softtabstop=2 cindent
 autocmd FileType python setlocal expandtab shiftwidth=4 softtabstop=4 autoindent
 
 " setup for ycm
-let g:ycm_global_ycm_extra_conf = '/home/desktop/.vim/bundle/YouCompleteMe/.ycm_extra_conf.py'
+let g:ycm_global_ycm_extra_conf = '/home/USER/.vim/bundle/YouCompleteMe/.ycm_extra_conf.py'
 let g:ycm_python_binary_path = exepath('python3')
 let g:ycm_complete_in_comments = 1
 let g:ycm_autoclose_preview_window_after_completion = 1

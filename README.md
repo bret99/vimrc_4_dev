@@ -21,7 +21,7 @@ Prerequisites:
 
 After all vim plugins installed one should cd YouCompleteMe directory and run:
 1. ./install.py --clangd-completer;
-2. ./install.py --go-compliter;
+2. ./install.py --go-completer;
 3. set background value to dark/light ("dark" as default).
 
 After that value USER in 85 line in .vimrc file should be substituted for actual one.  

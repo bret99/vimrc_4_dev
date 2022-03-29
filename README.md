@@ -28,16 +28,16 @@ After that value USER in 85 line in .vimrc file should be substituted for actual
 
 Hotkeys one gets:
 
-  "<F2>" save file;
-  "<F3>" wildmenu for python3 (after <F2> hit): run, code check (bandit), delete current file, format code;
-  "<F4>" wildmenu for C++ (after <F2> hit): run, run with multi-threads option, memory leakage check (valgrind), delete current file, format code;
-  "<F5>" wildmenu for bash (after <F2> hit): run, delete current file;
-  "<F6>" wildmenu for golang (after <F2> hit): run, buld, delete current file, format code;
-  "<F7>"run vertical terminal; 
-  "<F8>"run below horizontal terminal;
-  "<F9>" files bar to work with (nerd tree);
-  "<F10>" exit vim;
-  "<F4>" hot key for emmet autocompletion (line 98 in .vimrc file): F4 + Comma gives html code autocompletion.
+  F2 - save file;
+  F3 - wildmenu for python3 (after <F2> hit): run, code check (bandit), delete current file, format code;
+  F4 - wildmenu for C++ (after <F2> hit): run, run with multi-threads option, memory leakage check (valgrind), delete current file, format code;
+  F5 - wildmenu for bash (after <F2> hit): run, delete current file;
+  F6 - wildmenu for golang (after <F2> hit): run, buld, delete current file, format code;
+  F7 -run vertical terminal; 
+  F8 -run below horizontal terminal;
+  F9 - files bar to work with (nerd tree);
+  F10 - exit vim;
+  F4 - hot key for emmet autocompletion (line 98 in .vimrc file): F4 + Comma gives html code autocompletion.
 
 Sometimes clangd autocompletion does not work correctly for some reason. If this happens one should:
 1. ./install.py --clang-completer;

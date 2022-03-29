@@ -1,4 +1,4 @@
-This a .vimrc config file for developing in C++, python3, bash, golang, terraform and nginx config file and html support.
+This is a .vimrc config file for developing in C++, python3, bash, golang, terraform and nginx config file and html support.
 
 Prerequisites:
 

@@ -17,7 +17,8 @@ Prerequisites:
 13. install terraform (form official site or distributive repo);
 14. install vim-nox;
 15. install Vundle.vim (https://github.com/VundleVim/Vundle.vim);
-16. install Paper color vim plugin (https://github.com/NLKNguyen/papercolor-theme): just copy PaperColor.vim to ~/.vim.colors/
+16. open .vimrc and run :PluginInstall;
+17. install Paper color vim plugin (https://github.com/NLKNguyen/papercolor-theme): just copy PaperColor.vim to ~/.vim/colors/
 
 After all vim plugins installed one should cd YouCompleteMe directory and run:
 1. ./install.py --clangd-completer;
@@ -37,9 +38,9 @@ Hotkeys one gets:
   
   F6 - wildmenu for golang (after <F2> hit): run, buld, delete current file, format code;
   
-  F7 -run vertical terminal; 
+  F7 - run vertical terminal; 
   
-  F8 -run below horizontal terminal;
+  F8 - run below horizontal terminal;
   
   F9 - files bar to work with (nerd tree);
   

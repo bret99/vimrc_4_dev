@@ -11,7 +11,7 @@ Prerequisites:
 7. pip3 install bandit;
 8. pip3 install yapf (or istall yapf3 from distributive repo);
 9. install pylint;
-10. install golang (form official site or distributive repo);
+10. install golang (from official site or distributive repo);
 11. install golint;
 12. install shellcheck;
 13. install terraform (form official site or distributive repo);
